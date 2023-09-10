@@ -5,7 +5,7 @@ import { ReservationListComponent } from '../reservation-list/reservation-list.c
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-
+import { HomeModule } from '../home/home.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { RouterTestingModule } from '@angular/router/testing';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule 
+    RouterModule,
+    HomeModule 
   ]
 })
 export class ReservationModule { }

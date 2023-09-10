@@ -29,10 +29,10 @@ export class ReservationFormComponent implements OnInit{
 
       });//we are creating a new group(or we are grouopng multiple controlls) when this componet gets initialized
   
-      let id= this.activatedRoute.snapshot.paramMap.get('id');
+      let id= this.activatedRoute.snapshot.paramMap.get('id');//we check if the activated route has an 'id'
       if(id){
-        let reservation = this.reservationService.getReservation(id);
-        if(reservation){this.reservationForm.patchValue(reservation);}
+        let reservation = this.reservationService.getReservation(id);//we recocer the reservation
+        if(reservation){this.reservationForm.patchValue(reservation);}//we patch all of the values from the reservation into the form.
         
       }
     }
@@ -48,7 +48,7 @@ export class ReservationFormComponent implements OnInit{
           let id= this.activatedRoute.snapshot.paramMap.get('id');
 
           if(id){         
-            this.reservationForm.patchValue(reservation);
+            this.reservationService.updateReservation(id,reservation);
           }else{
             this.reservationService.addReservation(reservation);
 
